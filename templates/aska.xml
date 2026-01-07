@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Aska</Name>
+  <Repository>ich777/steamcmd:aska</Repository>
+  <Registry>https://hub.docker.com/r/ich777/steamcmd</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <Overview>Dedicated server for ASKA. A survival tribe-builder set in a mystical Norse-inspired world.</Overview>
+  <Category>GameServer:</Category>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/ich777/docker-templates/master/ich777/images/steamcmd.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled/>
+  <DonateText/>
+  <DonateLink/>
+  <Description>Dedicated server for ASKA. A survival tribe-builder set in a mystical Norse-inspired world.</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>9876</HostPort>
+        <ContainerPort>9876</ContainerPort>
+        <Protocol>udp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/aska</HostDir>
+      <ContainerDir>/serverdata/serverfiles</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>2730720</Value>
+      <Name>GAME_ID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>-batchmode -nographics -setworldname "UnraidServer"</Value>
+      <Name>GAME_PARAMS</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="Game ID" Target="GAME_ID" Default="2730720" Mode="" Description="The Steam AppID for Aska Dedicated Server" Type="Variable" Display="always" Required="true" Mask="false">2730720</Config>
+  <Config Name="Game Parameters" Target="GAME_PARAMS" Default="-batchmode -nographics -setworldname &quot;UnraidServer&quot;" Mode="" Description="Server start arguments" Type="Variable" Display="always" Required="false" Mask="false">-batchmode -nographics -setworldname "UnraidServer"</Config>
+  <Config Name="Game Port" Target="9876" Default="9876" Mode="udp" Description="Main game port" Type="Port" Display="always" Required="true" Mask="false">9876</Config>
+  <Config Name="Appdata Path" Target="/serverdata/serverfiles" Default="/mnt/user/appdata/aska" Mode="rw" Description="Location for game server files" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/aska</Config>
+</Container>
